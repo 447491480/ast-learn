@@ -1,28 +1,28 @@
 package ast
 
-type ASTNode interface {
-	GetParent() ASTNode
-	GetChildren() []ASTNode
-	GetType() ASTNodeType
+type Node interface {
+	GetParent() Node
+	GetChildren() []Node
+	GetType() NodeType
 	GetText() string
 }
 
 type SimpleASTNode struct {
-	Parent          ASTNode
-	Children        []ASTNode
-	NodeType        ASTNodeType
-	Text            string
+	Parent   Node
+	Children []Node
+	NodeType NodeType
+	Text     string
 }
 
-func (node *SimpleASTNode) GetParent() ASTNode {
+func (node *SimpleASTNode) GetParent() Node {
 	return node.Parent
 }
 
-func (node *SimpleASTNode) GetChildren() []ASTNode {
+func (node *SimpleASTNode) GetChildren() []Node {
 	return node.Children
 }
 
-func (node *SimpleASTNode) GetType() ASTNodeType {
+func (node *SimpleASTNode) GetType() NodeType {
 	return node.NodeType
 }
 
