@@ -1,1 +1,5 @@
 build
+.idea
+gen
+.DS_Store
+.antlr
